@@ -7,7 +7,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Configuarcion 
+## Configuración 
 Para poder utilizar y que funcione la App, es necesario el archivo Entorno o Ambiente (.env),
 hay que crearlo en la raíz del proyecto. Generar dentro las constantes con los token que recivirás de la API de [RiotGamesDeveloper](https://developer.riotgames.com/) cuando crees una cuenta. 
 - VITE_DEVELOPMENT_API_KEY = "token"
