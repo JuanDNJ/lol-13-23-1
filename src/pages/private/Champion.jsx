@@ -2,6 +2,7 @@ import styles from "./css/champion.module.css";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { CHAMPIONS_FULL, CHAMPIONS_SPLASH } from "@/config"
+import MainMenu from "../../components/MainMenu";
 export default function Champion() {
     const { key } = useParams()
     const [champion, setChampion] = useState(null)
@@ -26,6 +27,7 @@ export default function Champion() {
 
     return (
         <>
+            <MainMenu />
             <h2>{champion && champion.name}</h2>
             <img src={champion && champion.image.full} alt="" />
             <h3>{champion && champion.title}</h3>

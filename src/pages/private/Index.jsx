@@ -1,13 +1,10 @@
 import MainMenu from "@/components/MainMenu";
-import { useStore } from "@/context/Store.ctx"
 
 const Index = () => {
-    const { summoner } = useStore()
-
     return (
         <>
             <MainMenu />
-            <h1>{summoner && summoner.name}</h1>
+            <h1>Welcome API LOL</h1>
             <p>
                 Ea laborum irure non consequat excepteur aliqua fugiat ex veniam sit incididunt aute qui.
                 Consectetur cupidatat esse ex incididunt sit aute. Deserunt magna proident exercitation anim laboris.

@@ -2,6 +2,7 @@ import styles from "./css/champions.module.css";
 import { useEffect, useState } from "react"
 import { CHAMPIONS, CHAMPIONS_LOADING } from "@/config"
 import { Link } from "react-router-dom";
+import MainMenu from "../../components/MainMenu";
 export default function Champions() {
     const [champions, setChampions] = useState([]);
 
@@ -36,8 +37,11 @@ export default function Champions() {
         }
     )
     return (
-        <ul className={styles.listChampions}>
-            {renderChampions}
-        </ul>
+        <>
+            <MainMenu />
+            <ul className={styles.listChampions}>
+                {renderChampions}
+            </ul>
+        </>
     )
 }
