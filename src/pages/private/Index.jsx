@@ -2,12 +2,12 @@ import MainMenu from "@/components/MainMenu";
 import { useStore } from "@/context/Store.ctx"
 
 const Index = () => {
-    const { userName } = useStore()
+    const { summoner } = useStore()
 
     return (
         <>
             <MainMenu />
-            <h1>{userName}</h1>
+            <h1>{summoner && summoner.name}</h1>
             <p>
                 Ea laborum irure non consequat excepteur aliqua fugiat ex veniam sit incididunt aute qui.
                 Consectetur cupidatat esse ex incididunt sit aute. Deserunt magna proident exercitation anim laboris.

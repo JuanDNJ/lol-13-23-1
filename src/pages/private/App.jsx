@@ -3,9 +3,9 @@ import { Navigate } from 'react-router-dom';
 import { useStore } from '../../context/Store.ctx';
 
 function App() {
-  const { userName } = useStore()
+  const { summoner } = useStore()
 
-  if (!userName) {
+  if (!summoner) {
     return <Navigate to="/authentification" replace={true} />
   }
 

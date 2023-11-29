@@ -1,7 +1,7 @@
 // Constantes de entorno
 const DEVELOPMENT_API_KEY = import.meta.env.VITE_DEVELOPMENT_API_KEY;
 const PRODUCTION_API_KEY = import.meta.env.VITE_PRODUCTION_API_KEY;
-const URL_LOL = "https://euw1.api.riotgames.com/lol";
+const URL_REGION = "https://{region}.api.riotgames.com/lol";
 const URL_API_EUROPE = "https://europe.api.riotgames.com/lol";
 const URL_API_EUROPE_RIOT = "https://europe.api.riotgames.com/riot";
 
@@ -229,10 +229,15 @@ const DOWNLOADS = {
     rankedPositionsOld: 'https://static.developer.riotgames.com/docs/lol/ranked-positions.zip',
     tierIcons: 'https://static.developer.riotgames.com/docs/lol/tier-icons.zip'
 };
+
+
+// URL para obtener los datos del nombre de invocador del Juego
+const GET_SUMMONER_DATA = URL_REGION + "/summoner/v4/summoners/by-name/{summonerName}?api_key={token}";
+
 export {
     DEVELOPMENT_API_KEY,
     PRODUCTION_API_KEY,
-    URL_LOL,
+    URL_REGION,
     URL_API_EUROPE,
     URL_API_EUROPE_RIOT,
     BROWSER_LANGUAGE,
@@ -276,5 +281,6 @@ export {
     EMBLEMS_WINGS_OLD,
     RANKED_EMBLEMS_POSITION,
     TIERS_ICONS,
-    BASE_ICONS
+    BASE_ICONS,
+    GET_SUMMONER_DATA
 }
