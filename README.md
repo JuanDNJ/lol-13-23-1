@@ -20,7 +20,7 @@ hay que crearlo en la raíz del proyecto. Generar dentro las constantes con los 
 
 
 
-### Enlaces de interes
+## Enlaces de interes
 - [ESLint](https://eslint.org)
 - [README](https://www.makeareadme.com)
 - [RiotGamesDeveloper](https://developer.riotgames.com/)
