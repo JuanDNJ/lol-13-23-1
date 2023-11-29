@@ -8,15 +8,20 @@ export default function Authentification() {
         return <Navigate to="/" />
     }
 
-    const handlerSummoner = (eve) => {
-        console.log(eve.target.value)
-        saveUserName(eve.target.value)
+    const handlerSubmit = (eve) => {
+        eve.preventDefault();
+
+        console.log(eve.target.summoner.value)
+        saveUserName(eve.target.summoner.value)
     }
 
     return (
         <>
             <h2>Authentification</h2>
-            <input onChange={handlerSummoner} type="text" name="summoner" placeholder="Insert your summoner name" />
+            <form onSubmit={handlerSubmit}>
+                <input type="text" name="summoner" placeholder="Insert your summoner name" />
+                <button type="submit">Send</button>
+            </form>
         </>
     )
 }

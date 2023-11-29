@@ -1,13 +1,13 @@
+// Constantes de entorno
 const DEVELOPMENT_API_KEY = import.meta.env.VITE_DEVELOPMENT_API_KEY;
 const PRODUCTION_API_KEY = import.meta.env.VITE_PRODUCTION_API_KEY;
-const URL_LOL = import.meta.env.VITE_URL_LOL
-const URL_API_EUROPE = import.meta.env.VITE_URL_LOL_EUROPE;
-const URL_API_EUROPE_RIOT = import.meta.env.VITE_URL_LOL_EUROPE_RIOT;
-const URL_WEB = import.meta.env.VITE_URL_WEB;
-const HEADERS = new Headers();
+const URL_LOL = "https://euw1.api.riotgames.com/lol";
+const URL_API_EUROPE = "https://europe.api.riotgames.com/lol";
+const URL_API_EUROPE_RIOT = "https://europe.api.riotgames.com/riot";
+
+// Lenguaje del navegador
 const BROWSER_LANGUAGE = window.navigator.language;
 
-HEADERS.append('Accept-Charset', 'application/x-www-form-urlencoded; charset=UTF-8');
 
 // Url del CDN https://ddragon.leagueoflegends.com/cdn
 const CDN = "https://ddragon.leagueoflegends.com/cdn";
