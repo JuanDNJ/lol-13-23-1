@@ -235,8 +235,6 @@ export {
     URL_LOL,
     URL_API_EUROPE,
     URL_API_EUROPE_RIOT,
-    URL_WEB,
-    HEADERS,
     BROWSER_LANGUAGE,
     CDN,
     VERSION,
