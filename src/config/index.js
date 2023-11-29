@@ -9,7 +9,7 @@ const BROWSER_LANGUAGE = window.navigator.language;
 
 HEADERS.append('Accept-Charset', 'application/x-www-form-urlencoded; charset=UTF-8');
 
-
+// Url del CDN https://ddragon.leagueoflegends.com/cdn
 const CDN = "https://ddragon.leagueoflegends.com/cdn";
 /**
  * Versiones
