@@ -6,19 +6,22 @@ const CTX = createContext();
 
 export default function StoreCtx({ children }) {
 
-    const [userName, setUserName] = useState("PimpoBolson")
+    const [userName, setUserName] = useState(JSON.parse(localStorage.getItem("summoner")) ?? false)
 
 
     const saveUserName = useCallback((name) => {
-        setUserName(() => name)
+        localStorage.setItem("summoner", JSON.stringify(name))
+        setUserName(() => JSON.parse(localStorage.getItem("summoner")) ?? false);
     }, [userName])
-
-
-
+    const removeUserName = useCallback(() => {
+        localStorage.removeItem("summoner")
+        setUserName(() => JSON.parse(localStorage.getItem("summoner")) ?? false);
+    }, [userName])
     const value = useMemo(() => ({
         userName,
-        saveUserName
-    }), [userName, saveUserName])
+        saveUserName,
+        removeUserName
+    }), [userName, saveUserName, removeUserName])
 
     return (
         <CTX.Provider value={value}>
