@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 ## Configuarcion 
 Para poder utilizar y que funcione la App, es necesario el archivo Entorno o Ambiente (.env),
-hay que crearlo en la raíz del proyecto. Generar dentro las constantes con los token que revivirás de la API de [RiotGamesDeveloper](https://developer.riotgames.com/) cuando crees una cuenta. 
+hay que crearlo en la raíz del proyecto. Generar dentro las constantes con los token que recivirás de la API de [RiotGamesDeveloper](https://developer.riotgames.com/) cuando crees una cuenta. 
 - VITE_DEVELOPMENT_API_KEY = "token"
 - VITE_PRODUCTION_API_KEY = "token"
 
