@@ -1,8 +1,46 @@
+
+@import url("./modern-normalize.css");
 body{
+    background: #333;
+    color: #fff;
+    font-family: "Oxanium ExtraLight";
+    font-size: 1em;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Race Sport';
     margin: 0;
 }
 a{
     color: white;
-    font-weight: 900;
+    font-weight: 500;
     text-decoration: none;
+}
+.mainTitle{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+.title{
+    padding: 1rem; 
+    font-size: 1.2rem;
+}
+.subtitle{
+    padding: 1rem; 
+    font-size: 1.1rem;
+}
+p{
+    margin: 0;
+    padding: 1rem;
+    
+}
+.container{
+    display: grid;
+    place-content: center;
+    min-width: 320px;
+    margin: 0 auto;
+    
+}
+.authentication{
+    place-items: center;
+    height: 100vh;
 }

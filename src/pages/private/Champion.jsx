@@ -26,14 +26,14 @@ export default function Champion() {
     }, [])
 
     return (
-        <>
+        <section>
             <MainMenu />
-            <h2>{champion && champion.name}</h2>
+            <h2 className="title">{champion && champion.name}</h2>
             <img src={champion && champion.image.full} alt="" />
-            <h3>{champion && champion.title}</h3>
+            <h3 className="subtitle">{champion && champion.title}</h3>
             <p>
                 {champion && champion.lore}
             </p>
-        </>
+        </section>
     )
 }

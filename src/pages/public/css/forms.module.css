@@ -4,6 +4,7 @@
     linear-gradient(336deg, rgba(152, 152, 240, 0.8), rgba(152, 152, 240,0) 70.71%);
     border-radius: 8px;
     border: 1px solid rgba(102, 100, 100, .1);
+    max-width: 320px;
 }
 .formControl, .formSelectSummoner{
     display: flex;
@@ -17,20 +18,20 @@
     padding: 1rem;
     place-items: center;
     place-content: space-between;
+    gap: 1rem;
 }
 :is(select[name="region"],select[name="language"]){
     padding: .5rem;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 1);
     color: rgba(94, 92, 92, 1);
+    display: flex;
+    place-content: space-between;
+    gap: 1rem;
+    flex: 1;
+    text-align: center;
 }
-select[name="region"]{
-    width: 100px;
-}
-select[name="language"]{
-    width: 140px;
-    
-}
+
 input[name="summoner"]{
     padding: .5rem;
     border-radius: 4px;
@@ -46,5 +47,8 @@ button{
     color: rgba(94, 92, 92, 1);
 }
 :is(.formControl > strong, .formSelectSummoner > strong, .formControlRow > strong, .formSelectSummonerRow > strong){
-    color: rgba(94, 92, 92, 1);
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    flex: 1;
 }

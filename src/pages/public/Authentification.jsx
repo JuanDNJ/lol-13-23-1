@@ -58,18 +58,17 @@ export default function Authentification() {
     ));
 
     return (
-        <>
-            <h2>Authentification</h2>
+        <section className="container authentication">
+            <h2 className="title">Authentification</h2>
             <form onSubmit={handlerSubmit} className={styles.formSelectSummoner}>
-                <div className={styles.formControlRow}>
+                <div className={styles.formControl}>
                     <strong>Select Region</strong>
                     <select name="region" defaultValue={'EUW1'}>
                         {regionsRender}
                     </select>
                 </div>
-                <div className={styles.formControlRow}>
-                    <strong>Select language</strong>
-                    <Flag size={'16x12'} code={selectedCountrie && selectedCountrie} />
+                <div className={styles.formControl}>
+                    <strong>Select language <Flag size={'32x24'} code={selectedCountrie && selectedCountrie} /></strong>
                     <select onChange={handlerCountrie} name="language" value={selectedCountrie}>
                         {renderCountries}
                     </select>
@@ -82,6 +81,6 @@ export default function Authentification() {
                     <button type="submit">Send</button>
                 </div>
             </form>
-        </>
+        </section>
     )
 }
