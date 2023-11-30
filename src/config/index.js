@@ -247,9 +247,16 @@ const DOWNLOADS = {
     tierIcons: 'https://static.developer.riotgames.com/docs/lol/tier-icons.zip'
 };
 
-
 // URL para obtener los datos del nombre de invocador del Juego
 const GET_SUMMONER_DATA = URL_REGION + "/summoner/v4/summoners/by-name/{summonerName}?api_key={token}";
+
+// https://www.banderas-mundo.es Banderas de paises (gratuitas) codigo de pais ISO 3166
+// Tallas disponibles 
+// 16x12,20x15,24x18,28x21,32x24,40x27,48x36,56x42,
+// 60x45,64x48,80x60,84x63,96x72,108x81 112x84,
+// 120x90,128x96,144x108,160x120,192x144,224x128,256x192
+const BANDERA = "https://flagcdn.com/{size}/{code}.png";
+const BANDERAS_JSON = "https://flagcdn.com/es/codes.json";
 
 export {
     DEVELOPMENT_API_KEY,
@@ -300,5 +307,7 @@ export {
     RANKED_EMBLEMS_POSITION,
     TIERS_ICONS,
     BASE_ICONS,
-    GET_SUMMONER_DATA
+    GET_SUMMONER_DATA,
+    BANDERA,
+    BANDERAS_JSON
 }

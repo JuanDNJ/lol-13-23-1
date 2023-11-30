@@ -18,12 +18,18 @@
     place-items: center;
     place-content: space-between;
 }
-select[name="region"]{
-    width: 100px;
+:is(select[name="region"],select[name="language"]){
     padding: .5rem;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 1);
     color: rgba(94, 92, 92, 1);
+}
+select[name="region"]{
+    width: 100px;
+}
+select[name="language"]{
+    width: 140px;
+    
 }
 input[name="summoner"]{
     padding: .5rem;
