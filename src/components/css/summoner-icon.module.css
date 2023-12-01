@@ -1,0 +1,10 @@
+.summonerIcon {
+    border-radius: 50%;
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid orange;
+}
+.summonerLinkIcon{
+    width: 32px;
+    height: 32px;
+}
