@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 import League from "@/components/League";
-import ContainerButtons from "../../../components/ContainerButtons";
+import ContainerButtons from "@/components/ContainerButtons";
+import { getLeagueEntriesBySummonerId } from "@/api/lol";
+import { useStore } from "@/context/Store.ctx";
 
 export default function Qualifying() {
-    const URL = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/zPOhFoI3Bt_4rU8fnsOzTJPKZlhLP4IEt-8sUPrCzR1Ps4Q?api_key=RGAPI-f1cee9c7-a2d8-4436-92e6-dce2caf3c89e";
     const [qualifying, setQualifying] = useState([])
     const [leagueId, setLeagueId] = useState()
     const [rank, setRank] = useState()
+    const { summoner } = useStore()
+
     const handlerLeague = (id, ranked) => {
         setLeagueId(() => id)
         setRank(() => ranked)
     }
 
     useEffect(() => {
-        fetch(URL)
-            .then(record => record.json())
-            .then(res => {
-                // console.log(res)
-                setQualifying(() => res)
-
-            })
+        getLeagueEntriesBySummonerId(summoner).then(res => {
+            setQualifying(() => res)
+        })
 
     }, [])
 
@@ -36,4 +35,5 @@ export default function Qualifying() {
             {leagueId && <League leagueId={leagueId} ranked={rank} />}
         </article>
     )
+
 }

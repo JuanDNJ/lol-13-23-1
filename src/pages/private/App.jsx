@@ -10,7 +10,9 @@ function App() {
   }
 
   return (
-    <Outlet />
+    <section className="outlet">
+      <Outlet />
+    </section>
   )
 }
 

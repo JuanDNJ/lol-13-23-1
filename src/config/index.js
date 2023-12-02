@@ -4,6 +4,16 @@ const PRODUCTION_API_KEY = import.meta.env.VITE_PRODUCTION_API_KEY;
 const URL_REGION = "https://{region}.api.riotgames.com/lol";
 const URL_API_EUROPE = "https://europe.api.riotgames.com/lol";
 const URL_API_EUROPE_RIOT = "https://europe.api.riotgames.com/riot";
+// URL para obtener los datos del nombre de invocador del Juego
+const URL_SUMMONER_DATA = URL_REGION + "/summoner/v4/summoners/by-name/{summonerName}?api_key={token}";
+// URL para obtener los datos de las ligas del juego del invocador por la id de la liga
+const URL_LEAGUE_BY_ID = "https://{region}.api.riotgames.com/lol/league/v4/leagues/{leagueId}?api_key={token}";
+// URL para obtener los datos de las entradas de las ligas del juego por el id del invocador
+const URL_LEAGUE_ENTRIES_BY_SUMMORNER_ID = "https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summornerId}?api_key={token}";
+
+// Publics urls
+const PUBLIC_URL_EMBLEM_LATEST = 'http://localhost:5173/images/ranked-emblems-latest/Rank={emblem}.png';
+
 
 // Lenguaje del navegador
 const BROWSER_LANGUAGE = window.navigator.language;
@@ -247,9 +257,6 @@ const DOWNLOADS = {
     tierIcons: 'https://static.developer.riotgames.com/docs/lol/tier-icons.zip'
 };
 
-// URL para obtener los datos del nombre de invocador del Juego
-const GET_SUMMONER_DATA = URL_REGION + "/summoner/v4/summoners/by-name/{summonerName}?api_key={token}";
-
 // https://www.banderas-mundo.es Banderas de paises (gratuitas) codigo de pais ISO 3166
 // Tallas disponibles 
 // 16x12,20x15,24x18,28x21,32x24,40x27,48x36,56x42,
@@ -264,6 +271,10 @@ export {
     URL_REGION,
     URL_API_EUROPE,
     URL_API_EUROPE_RIOT,
+    URL_SUMMONER_DATA,
+    URL_LEAGUE_BY_ID,
+    URL_LEAGUE_ENTRIES_BY_SUMMORNER_ID,
+    PUBLIC_URL_EMBLEM_LATEST,
     BROWSER_LANGUAGE,
     CDN,
     VERSION,
@@ -307,7 +318,7 @@ export {
     RANKED_EMBLEMS_POSITION,
     TIERS_ICONS,
     BASE_ICONS,
-    GET_SUMMONER_DATA,
+
     BANDERA,
     BANDERAS_JSON
 }

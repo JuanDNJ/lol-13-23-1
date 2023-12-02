@@ -37,11 +37,11 @@ export default function Champions() {
         }
     )
     return (
-        <>
+        <section className="container">
             <MainMenu />
             <ul className={styles.listChampions}>
                 {renderChampions}
             </ul>
-        </>
+        </section>
     )
 }
