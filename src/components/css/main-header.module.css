@@ -1,0 +1,12 @@
+.mainHeader {
+    position: sticky;
+    top: 0;
+    grid-area: header;
+    border-bottom: 1px solid olive;
+    display: flex;
+    place-content: space-between;
+    place-items: center;
+    gap: 1rem;
+    background: linear-gradient(217deg, rgb(54, 53, 53), rgb(7, 92, 126) 70.71%);
+    z-index: 10;
+}

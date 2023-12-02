@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import { CHAMPIONS, CHAMPIONS_LOADING } from "@/config"
 import { Link } from "react-router-dom";
 import MainMenu from "../../components/MainMenu";
+import Grid from "../../components/Grid";
+import MainHeader from "../../components/MainHeader";
+import Page from "../../components/Page";
 export default function Champions() {
     const [champions, setChampions] = useState([]);
 
@@ -37,11 +40,17 @@ export default function Champions() {
         }
     )
     return (
-        <section className="container">
-            <MainMenu />
-            <ul className={styles.listChampions}>
-                {renderChampions}
-            </ul>
-        </section>
+        <Grid>
+            <MainHeader>
+                <h2 className="subtitle">Champions</h2>
+                <MainMenu />
+            </MainHeader>
+            <Page>
+                <ul className={styles.listChampions}>
+                    {renderChampions}
+                </ul>
+            </Page>
+        </Grid>
+
     )
 }
