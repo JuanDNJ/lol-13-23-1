@@ -1,0 +1,30 @@
+:is(.menuBetween,
+.menuStart,
+.menuEnd,
+.menuCenter,
+.menuEvenly) {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    place-items: center;
+}
+
+.menuStart {
+    place-content: flex-start;
+}
+
+.menuEnd {
+    place-content: flex-end;
+}
+
+.menuBetween {
+    place-content: space-between;
+}
+
+.menuCenter {
+    place-content: center;
+}
+
+.menuEvenly {
+    place-content: space-evenly;
+}

@@ -7,6 +7,8 @@
     --font-oxanium-semibold: 'Oxanium SemiBold';
     --font-oxanium-medium: 'Oxanium Medium';
     --font-oxanium-regular: 'Oxanium Regular';
+
+    --menu-mode: center;
 }
 ::-webkit-scrollbar {
     /* 1 */

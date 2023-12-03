@@ -7,6 +7,7 @@ import {
     BANDERA,
     BANDERAS_JSON
 } from "@/config"
+import { URL_DATA_MATCH, URL_LIST_MATCHES } from "../config"
 
 async function getSummonerByName(data) {
     try {
@@ -62,10 +63,17 @@ async function getLeagueEntriesBySummonerId(data) {
 
 }
 async function getProfileIcon(data) {
-    const profileiconid = PROFILE_ICON.replace("{profileiconid}", data.profileIconId)
-    const fetching = await fetch(profileiconid)
-    const url = fetching.url;
-    return url;
+    let url;
+
+    if (Object.keys(data).find(key => key === "profileIcon")) {
+        url = PROFILE_ICON.replace("{profileiconid}", data.profileIcon)
+    } else {
+        url = PROFILE_ICON.replace("{profileiconid}", data.profileIconId)
+    }
+
+    const fetching = await fetch(url)
+
+    return fetching.url;
 }
 async function getUrlFlagLanguage(data) {
     console.log(data)
@@ -102,11 +110,35 @@ async function getListFlags(options) {
     const fetching = await fetch(BANDERAS_JSON)
     return fetching.json()
 }
+
+async function getListOfMatches(puuid) {
+    console.log(puuid)
+    const start = 0
+    const count = 10
+    const type = 'normal'
+    const token = DEVELOPMENT_API_KEY
+    const url = URL_LIST_MATCHES.replace("{puuid}", puuid).replace("{type}", type).replace("{start}", start).replace("{count}", count).replace("{token}", token)
+    const fetching = await fetch(url)
+    const matches = await fetching.json()
+    // const allMatches = matches.map(async (matchId) => await getDataMatchById(matchId))
+    return matches
+}
+async function getDataMatchById(matchId) {
+    const token = DEVELOPMENT_API_KEY
+    const url = URL_DATA_MATCH.replace("{matchId}", matchId).replace("{token}", token)
+    const fetching = await fetch(url)
+    const match = await fetching.json()
+    // console.log(match)
+    return match
+
+}
 export {
     getSummonerByName,
     getLeagueById,
     getLeagueEntriesBySummonerId,
     getProfileIcon,
     getUrlFlagLanguage,
-    getListFlags
+    getListFlags,
+    getListOfMatches,
+    getDataMatchById
 }

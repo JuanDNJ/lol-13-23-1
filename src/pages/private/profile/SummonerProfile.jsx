@@ -3,7 +3,10 @@ import { Link, Outlet } from "react-router-dom"
 import MainMenu from "@/components/MainMenu"
 import Grid from "@/components/Grid"
 import MainHeader from "@/components/MainHeader"
-import Page from "../../../components/Page"
+import Page from "@/components/Page"
+import Menu from "../../../components/Menu"
+
+
 export default function SummonerProfile() {
     return (
         <Grid>
@@ -12,16 +15,16 @@ export default function SummonerProfile() {
                 <MainMenu />
             </MainHeader>
             <Page>
-                <nav>
+                <Menu mode="center">
                     <Link to="history">History</Link>
                     <Link to="stats">Stats</Link>
                     <Link to="qualifying">Qualifying</Link>
                     <LogOut />
-                </nav>
-                <h2 className="title">Summoner profile</h2>
+                </Menu>
                 <Outlet />
             </Page>
         </Grid>
 
     )
+
 }

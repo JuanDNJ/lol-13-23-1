@@ -10,7 +10,10 @@ const URL_SUMMONER_DATA = URL_REGION + "/summoner/v4/summoners/by-name/{summoner
 const URL_LEAGUE_BY_ID = "https://{region}.api.riotgames.com/lol/league/v4/leagues/{leagueId}?api_key={token}";
 // URL para obtener los datos de las entradas de las ligas del juego por el id del invocador
 const URL_LEAGUE_ENTRIES_BY_SUMMORNER_ID = "https://{region}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summornerId}?api_key={token}";
-
+// URL para obtener los datos del historial
+const URL_LIST_MATCHES = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?type={type}&start={start}&count={count}&api_key={token}"
+// URL para obtener los datos de un match
+const URL_DATA_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/{matchId}?api_key={token}"
 // Publics urls
 const PUBLIC_URL_EMBLEM_LATEST = 'http://localhost:5173/images/ranked-emblems-latest/Rank={emblem}.png';
 
@@ -274,6 +277,8 @@ export {
     URL_SUMMONER_DATA,
     URL_LEAGUE_BY_ID,
     URL_LEAGUE_ENTRIES_BY_SUMMORNER_ID,
+    URL_LIST_MATCHES,
+    URL_DATA_MATCH,
     PUBLIC_URL_EMBLEM_LATEST,
     BROWSER_LANGUAGE,
     CDN,
