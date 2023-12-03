@@ -1,0 +1,43 @@
+.match{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid olive
+}
+.matchInfo {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    flex: 1;
+    background: radial-gradient(#223, #222, #333);
+}
+.matchParticipants{
+    display: flex;
+    flex: 2;
+    background: radial-gradient(#223, #222, #333);
+    place-items: center;
+}
+.matchParticipant{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 2rem;
+    background: radial-gradient(#223, #222, #333);
+    place-content: center;
+    place-items: center;
+}
+.matchParticipantInfo {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    flex: 2;
+}
+.matchParticipantItems {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    flex: 2;
+    gap: 1px;
+    
+}

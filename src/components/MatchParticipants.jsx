@@ -1,11 +1,11 @@
-import { useState } from "react"
+import styles from "./css/match.module.css"
 import MatchParticipant from "./MatchParticipant"
 
 
 export default function MatchParticipants({ match }) {
 
     return (
-        <div style={{ display: "flex", flex: '2', background: "gray", padding: ".5rem 1rem" }}>
+        <div className={styles.matchParticipants}>
             {match && match.map((participant, key) => <MatchParticipant key={key} player={participant} />)}
         </div>
     )

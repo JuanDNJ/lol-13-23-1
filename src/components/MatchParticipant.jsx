@@ -1,6 +1,6 @@
+import styles from "./css/match.module.css"
 import { useStore } from "@/context/Store.ctx"
 import { useEffect, useState } from "react"
-import MatchParticipantIcon from "@/components/MatchParticipantIcon"
 import MatchParticipantChampionSquare from "./MatchParticipantChampionSquare"
 export default function MatchParticipant({ player }) {
 
@@ -17,18 +17,16 @@ export default function MatchParticipant({ player }) {
     }, [])
     return (<>
 
-        {playerMatch ? <div style={{ display: 'flex', flexDirection: 'row', gap: "2rem", placeItems: "center" }}>
-            <div style={{ flex: '1' }}>
-                <MatchParticipantChampionSquare nameChampion={playerMatch.championName} />
-            </div>
+        {playerMatch ? <div className={styles.matchParticipant}>
+            <MatchParticipantChampionSquare nameChampion={playerMatch.championName} />
 
-            <div style={{ display: 'flex', flexDirection: 'column', flex: '2', placeContent: "center" }}>
+            <div className={styles.matchParticipantInfo}>
                 <strong>{playerMatch.championName}</strong>
                 <strong>Level: {playerMatch.champLevel}</strong>
                 <strong>{playerMatch.win ? 'Victory' : 'Defeat'}</strong>
                 <strong>{playerMatch.individualPosition !== 'Invalid' ? <span> {playerMatch.role}</span> : null}</strong>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row', flex: '2', placeContent: "center", placeItems: "center", gap: "1px", height: "80px" }}>
+            <div className={styles.matchParticipantItems}>
                 <strong style={{ border: "1px solid snow" }}>{playerMatch.item0}</strong>
                 <strong style={{ border: "1px solid snow" }}>{playerMatch.item1}</strong>
                 <strong style={{ border: "1px solid snow" }}>{playerMatch.item2}</strong>

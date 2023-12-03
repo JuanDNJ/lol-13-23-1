@@ -1,3 +1,4 @@
+import styles from "../css/history.module.css"
 import { useStore } from "@/context/Store.ctx"
 import { useEffect, useState } from "react"
 import { getListOfMatches } from "../../../api/lol"
@@ -11,11 +12,14 @@ export default function History() {
         getListOfMatches(summoner.puuid)
             .then(matches => setMatches(() => matches))
     }, [])
+
+    const renderMatches = matches && matches.map((match, key) => <Match key={key} matchId={match} />)
+
     return (
         <article>
             <h2 className="title">History</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: "1rem", padding: "2rem 60px" }}>
-                {matches && matches.map((match, key) => <Match key={key} matchId={match} />)}
+            <div className={styles.historyPage}>
+                {renderMatches}
             </div>
         </article>
     )
