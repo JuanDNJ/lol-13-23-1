@@ -1,8 +1,8 @@
 import { CHAMPIONS_SQUARE } from "../config";
-
+import styles from "./css/match.module.css"
 export default function MatchParticipantChampionSquare({ nameChampion }) {
 
     return (
-        <img src={CHAMPIONS_SQUARE.replace("{square}", nameChampion)} alt="Champion Square" />
+        <img className={styles.matchParticipantCahmpionSquare} src={CHAMPIONS_SQUARE.replace("{square}", nameChampion)} alt="Champion Square" />
     )
 }

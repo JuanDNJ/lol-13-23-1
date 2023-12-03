@@ -2,6 +2,7 @@ import styles from "./css/match.module.css"
 import { useStore } from "@/context/Store.ctx"
 import { useEffect, useState } from "react"
 import MatchParticipantChampionSquare from "./MatchParticipantChampionSquare"
+import { ITEM_ASSETS } from "../config"
 export default function MatchParticipant({ player }) {
 
     const { summoner } = useStore()
@@ -22,18 +23,18 @@ export default function MatchParticipant({ player }) {
 
             <div className={styles.matchParticipantInfo}>
                 <strong>{playerMatch.championName}</strong>
-                <strong>Level: {playerMatch.champLevel}</strong>
-                <strong>{playerMatch.win ? 'Victory' : 'Defeat'}</strong>
-                <strong>{playerMatch.individualPosition !== 'Invalid' ? <span> {playerMatch.role}</span> : null}</strong>
+                <span>Level: <small style={{ color: "orange" }}>{playerMatch.champLevel}</small></span>
+                <span style={{ color: playerMatch.win ? 'green' : 'red' }}>{playerMatch.win ? 'Victory' : 'Defeat'}</span>
+                {playerMatch.individualPosition !== 'Invalid' ? <span style={{ color: 'skyblue' }}> {playerMatch.role}</span> : null}
             </div>
             <div className={styles.matchParticipantItems}>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item0}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item1}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item2}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item3}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item4}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item5}</strong>
-                <strong style={{ border: "1px solid snow" }}>{playerMatch.item6}</strong>
+                {playerMatch.item0 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item0)} alt="item" /> : null}
+                {playerMatch.item1 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item1)} alt="item" /> : null}
+                {playerMatch.item2 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item2)} alt="item" /> : null}
+                {playerMatch.item3 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item3)} alt="item" /> : null}
+                {playerMatch.item4 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item4)} alt="item" /> : null}
+                {playerMatch.item5 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item5)} alt="item" /> : null}
+                {playerMatch.item6 > 0 ? <img className={styles.matchPArticipantItemAsset} src={ITEM_ASSETS.replace("{item}", playerMatch.item6)} alt="item" /> : null}
             </div>
 
         </div> : null}

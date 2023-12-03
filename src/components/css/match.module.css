@@ -1,7 +1,8 @@
 .match{
     display: flex;
     flex-direction: row;
-    border: 1px solid olive
+    border: 1px solid olive;
+    padding: .5rem ;
 }
 .matchInfo {
     display: flex;
@@ -9,35 +10,47 @@
     place-content: center;
     place-items: center;
     flex: 1;
-    background: radial-gradient(#223, #222, #333);
+
 }
 .matchParticipants{
     display: flex;
     flex: 2;
-    background: radial-gradient(#223, #222, #333);
+    
     place-items: center;
 }
 .matchParticipant{
     display: flex;
     flex-direction: row;
     flex: 1;
-    gap: 2rem;
-    background: radial-gradient(#223, #222, #333);
+    gap: 1rem;
+ 
     place-content: center;
     place-items: center;
 }
 .matchParticipantInfo {
     display: flex;
     flex-direction: column;
+   
     place-content: center;
-    flex: 2;
+    flex: .5;
 }
 .matchParticipantItems {
     display: flex;
     flex-direction: row;
     place-content: center;
     place-items: center;
-    flex: 2;
-    gap: 1px;
+    flex: 1;
+    gap: 2px;
     
+}
+.matchPArticipantItemAsset{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border: 1px solid olive
+}
+.matchParticipantCahmpionSquare{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
 }
